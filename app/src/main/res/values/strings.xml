@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Les_Intouchables</string>
+    <string name="title_activity_startseit__swipe">Startseit_Swipe</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="Enterprise">  Enterprise: Les Intouchables, Good Life Crew, usw</string>
+    <string name="Serhat_Text">  Blaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaa bitch</string>
+    <string name="Umit_Text">  Blaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaa bitch</string>
+    <string name="Sahin_Text">  Blaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaa bitch</string>
+    <string name="Sahin_Name">  Sahin Oyman</string>
+    <string name="Umit_Name">  Umit Oyman</string>
+    <string name="Serhat_Name">  Serhat Oyman</string>
+    <string name="Telefon">0041765822410, baume@hispeed.ch</string>
+    <string name="Kontakt">Tester</string>
+    <string name="Beschreibung">Les IntouchablesLes IntouchablesLes IntouchablesLes IntouchablesLes IntouchablesLes IntouchablesLes Intouchables</string>
+
+
+
+
+</resources>

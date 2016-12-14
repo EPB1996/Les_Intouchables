@@ -1,0 +1,296 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.Team"
+    android:background="@android:color/background_light">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:id="@+id/Allgemein_Kontakt"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:weightSum="4"
+            android:layout_marginRight="100dp"
+            android:layout_marginEnd="100dp">
+
+            <TextView
+                android:id="@+id/allgemein_1.1"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/allgemein_1.2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"/>
+
+
+            <TextView
+                android:id="@+id/allgemein_1.3"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Team"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@id/Allgemein_Kontakt"
+            android:gravity="center"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginRight="125dp"/>
+
+    <LinearLayout
+        android:id="@+id/Profil1"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:weightSum="5"
+        android:orientation="vertical"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_below="@+id/Team"
+        >
+
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/Text1.1"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+        />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/Text1.2"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/Text1.3"
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+
+        android:layout_below="@+id/Profil1"
+        android:id="@+id/Profil2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:weightSum="5"
+        android:orientation="vertical"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="5dp">
+
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/Text2.1"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/Text2.2"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/Text2.3"
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_below="@+id/Profil2"
+            android:id="@+id/Profil3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:weightSum="5"
+            android:orientation="vertical"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="5dp">
+
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:id="@+id/Text3.1"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:id="@+id/Text3.2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:id="@+id/Text3.3"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_below="@+id/Profil3"
+        android:id="@+id/Profil4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:weightSum="5"
+        android:orientation="vertical"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="5dp">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+        <ImageView
+            android:background="@android:color/darker_gray"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/cast_album_art_placeholder"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/Profil2"/>
+
+        <ImageView
+            android:background="@android:color/darker_gray"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/cast_album_art_placeholder"
+            android:layout_alignTop="@+id/Profil1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:background="@android:color/darker_gray"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/cast_album_art_placeholder"
+            android:layout_alignTop="@+id/Profil3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:background="@android:color/darker_gray"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/cast_album_art_placeholder"
+            android:layout_alignTop="@+id/Profil4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+       <ImageView
+           android:background="@android:color/darker_gray"
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:layout_marginTop="5dp"
+           android:layout_below="@+id/Profil4"/>
+
+        <ImageView
+            android:id="@+id/allgemein_foto"
+            android:background="@android:color/darker_gray"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignTop="@+id/Allgemein_Kontakt"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    </ScrollView>
+</FrameLayout>

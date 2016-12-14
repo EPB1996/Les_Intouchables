@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="132dp">
+
+
+
+    <RelativeLayout
+        android:id="@+id/lvl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        >
+
+
+        <ImageView
+            android:id="@+id/Titelbild_1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/black"/>
+
+
+
+        <TextView
+            android:id="@+id/Endlezz_Info"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/Titelbild_1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/holo_orange_light"/>
+
+        <TextView
+            android:id="@+id/Endlezz_Info1"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@+id/Titelbild_1"
+            android:layout_below="@+id/Endlezz_Info"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="10sp"
+            android:textColor="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/Endlezz_Info2"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@+id/Titelbild_1"
+            android:layout_below="@+id/Endlezz_Info1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20sp"
+            android:textColor="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/Endlezz_Info3"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@+id/Titelbild_1"
+            android:layout_below="@+id/Endlezz_Info2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <CheckBox
+            android:id="@+id/checkbox1"
+            android:text="Teilnehmen"
+            android:textAlignment="inherit"
+            android:textSize="10sp"
+            android:textColor="@android:color/background_dark"
+
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:buttonTint="@android:color/background_dark"
+            android:layout_below="@+id/Titelbild_1"
+            android:layout_toEndOf="@+id/Endlezz_Info3"
+            android:layout_toRightOf="@+id/Endlezz_Info3"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Endlezz_Info3"
+            android:layout_toLeftOf="@id/checkbox1"
+            android:weightSum="2">
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:text="GUESTLIST"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/Endlezz_Lounges"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:text="LOUNGES"
+            android:layout_weight="1"
+            />
+
+        </LinearLayout>
+    </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
