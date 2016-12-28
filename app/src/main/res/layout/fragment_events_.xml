@@ -5,184 +5,119 @@
     tools:context="layout.Events_Fragment"
     android:background="@android:color/holo_red_dark">
 
-
-    <RelativeLayout
-        android:id="@+id/fragments_events"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ScrollView
+        android:id="@+id/Scrollit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         >
+        <LinearLayout
+            android:id="@+id/lineartest"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="4"
+            android:orientation="vertical"
+            >
 
 
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:weightSum="2">
         <TextView
+            android:id="@+id/TestText"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:text="LOCATIONS"
+android:layout_weight="1"
             android:textStyle="bold|italic"
             android:gravity="center"/>
-
-        <HorizontalScrollView
+    <TextView
+        android:id="@+id/TestText1"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+</LinearLayout>
+        <ScrollView
             android:measureAllChildren="false"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:nestedScrollingEnabled="true"
             >
 
             <LinearLayout
                 android:layout_marginTop="20dp"
                 android:id="@+id/horizontalScrollView"
-                android:layout_width="wrap_content"
-                android:layout_height="220dp"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                android:backgroundTintMode="multiply"
-                android:background="@android:color/holo_orange_light">
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="5"
+                android:background="@android:color/holo_orange_light"
+                android:gravity="center">
+
+
 
                 <ImageButton
-                    android:id="@+id/Club1"
-                    android:layout_width="220dp"
-                    android:layout_height="match_parent"
+                    android:id="@+id/Party1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="220dp"
                     android:layout_weight="1"
+
                     />
 
+
                 <ImageButton
-                    android:id="@+id/Club2"
-                    android:layout_width="220dp"
-                    android:layout_height="match_parent"
+                    android:id="@+id/Party2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="220dp"
                     android:layout_weight="1"/>
 
                 <ImageButton
-                    android:id="@+id/Club3"
-                    android:layout_width="220dp"
-                    android:layout_height="match_parent"
+                    android:id="@+id/Party3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="220dp"
                     android:layout_weight="1"
                     />
 
-            </LinearLayout>
-        </HorizontalScrollView>
 
-
-
-        <TextView
-            android:id="@+id/Party"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="240dp"
-            android:text="PARTY"
-            android:textStyle="bold|italic"
-            android:gravity="center"/>
-
-
-
-
-        <ScrollView
-            android:id="@+id/VerticalScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:fitsSystemWindows="true"
-            android:layout_below="@+id/Party">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:weightSum="3"
-                android:background="@android:color/holo_orange_light"
-                >
-
-                <LinearLayout
-                    android:id="@+id/ScrollableLeft1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                <ImageButton
+                    android:id="@+id/Party4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="220dp"
                     android:layout_weight="1"
-                    android:weightSum="2"
-                    >
-
-
-                    <ImageButton
-                        android:id="@+id/Party1"
-                        android:layout_width="0dp"
-                        android:layout_height="190dp"
-                        android:layout_weight="1"
-                        />
-
-                    <ImageButton
-                        android:id="@+id/Party2"
-                        android:layout_width="0dp"
-                        android:layout_height="190dp"
-                        android:layout_weight="1"
-
-                       />
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/ScrollableLeft2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:weightSum="2"
-
-                    >
-
-
-                    <ImageButton
-                        android:id="@+id/Party3"
-                        android:layout_width="0dp"
-                        android:layout_height="190dp"
-                        android:layout_weight="1"
-                        />
-
-                    <ImageButton
-                        android:id="@+id/Party4"
-                        android:layout_width="0dp"
-                        android:layout_height="190dp"
-                        android:layout_weight="1"
-
-                        />
-
-                </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/ScrollableLeft3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:weightSum="2"
-
-                >
-
-
+                    />
                 <ImageButton
                     android:id="@+id/Party5"
-                    android:layout_width="0dp"
-                    android:layout_height="190dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="220dp"
                     android:layout_weight="1"
+                    android:layout_marginBottom="25dp"
                     />
 
-                <ImageButton
-                    android:id="@+id/Party6"
-                    android:layout_width="0dp"
-                    android:layout_height="190dp"
-                    android:layout_weight="1"
-
-                    />
-            </LinearLayout>
             </LinearLayout>
         </ScrollView>
-
-
-
-
-
-
-    </RelativeLayout>
+-->
 
 
 </FrameLayout>

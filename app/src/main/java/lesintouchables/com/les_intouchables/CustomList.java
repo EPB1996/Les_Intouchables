@@ -1,5 +1,7 @@
 package lesintouchables.com.les_intouchables;
 
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.SimpleAdapter;
 
 import java.util.HashMap;
@@ -14,7 +16,10 @@ import java.util.HashMap;
         import android.widget.Checkable;
         import android.widget.ImageView;
         import android.widget.SimpleAdapter;
-        import android.widget.TextView;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
+
 
 
 
@@ -25,6 +30,8 @@ public class CustomList extends SimpleAdapter {
     int[] to;
     Context context;
     LayoutInflater mInflater;
+
+
     public CustomList(Context context, List<? extends Map<String, ?>> data, // if fails to compile, do the same replacement as above on this line
                       int resource, String[] from, int[] to) {
         super(context, data, resource, from, to);
@@ -40,6 +47,10 @@ public class CustomList extends SimpleAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         return this.createViewFromResource(position, convertView, parent, layout);
+
+
+
+
     }
 
     private View createViewFromResource(int position, View convertView,
@@ -53,6 +64,22 @@ public class CustomList extends SimpleAdapter {
 
         this.bindView(position, v);
 
+        //TODO:Set butt0nfunktions
+         final Button btn = (Button)v.findViewById(R.id.Endlezz_Lounges);
+         btn.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                Toast.makeText(context,"Lounges",Toast.LENGTH_LONG).show();
+             }
+         });
+
+        final Switch checkbox = (Switch)v.findViewById(R.id.checkbox1);
+        checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast.makeText(context,"Switch wurde betätigt",Toast.LENGTH_SHORT).show();
+            }
+        });
         return v;
     }
 

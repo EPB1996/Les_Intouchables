@@ -5,18 +5,37 @@ import android.app.Activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import layout.Empfehlungen;
 import layout.Events_Fragment;
 import layout.Team;
 
 
-public class Startseit_Swipe extends Activity {
+public class Startseit_Swipe extends AppCompatActivity{
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -49,6 +68,10 @@ public class Startseit_Swipe extends Activity {
 
 
     }
+
+
+
+
 
 
     @Override
@@ -91,7 +114,7 @@ public class Startseit_Swipe extends Activity {
             // Return a PlaceholderFragment (defined as a static inner class below).
 
             //TODO: linke fragments! drittes Fragment erstellen!
-            switch(position) {
+            switch (position) {
                 case 0:
                     return Events_Fragment.newInstance("FirstFragment, Instance 1");
 
@@ -123,4 +146,11 @@ public class Startseit_Swipe extends Activity {
             return null;
         }
     }
-}
+
+
+
+
+
+
+    }
+

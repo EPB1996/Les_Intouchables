@@ -72,7 +72,7 @@
             android:layout_alignParentStart="true" />
 
 
-        <CheckBox
+        <Switch
             android:id="@+id/checkbox1"
             android:text="Teilnehmen"
             android:textAlignment="inherit"
@@ -88,6 +88,7 @@
 
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Endlezz_Info3"
@@ -101,6 +102,7 @@
             />
 
         <Button
+            android:onClick="myClickHandler"
             android:id="@+id/Endlezz_Lounges"
             android:layout_width="130dp"
             android:layout_height="35dp"
