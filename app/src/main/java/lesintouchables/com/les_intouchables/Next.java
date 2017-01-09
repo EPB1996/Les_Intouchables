@@ -1,6 +1,7 @@
 package lesintouchables.com.les_intouchables;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,6 +12,7 @@ import android.os.AsyncTask;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -31,8 +33,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.Blob;
@@ -52,6 +59,7 @@ public class Next extends AppCompatActivity {
     private ProgressDialog pDialog;
     ListView lv;
 
+
     // URL to get contacts JSON
     private String url = "http://10.0.2.2/webservice/test.php";
     ArrayList<HashMap<String, ?>> contactList;
@@ -66,12 +74,15 @@ public class Next extends AppCompatActivity {
         setContentView(R.layout.activity_next);
 
 
+
         contactList = new ArrayList<>();
 
         lv = (ListView) findViewById(R.id.list);
 
 
         new GetContacts().execute();
+
+        getLounges();
 
 
 
@@ -143,6 +154,7 @@ public class Next extends AppCompatActivity {
 
 
 
+
                         }
                     } catch (final JSONException e) {
                         Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -171,7 +183,7 @@ public class Next extends AppCompatActivity {
 
                 }
 
-                //image fetch
+
 
 
                 return null;
@@ -191,27 +203,33 @@ public class Next extends AppCompatActivity {
                         Next.this, contactList,
                         R.layout.list_item, new String[]{"Name", "Date", "Beschreibung", "Image"}, new int[]{R.id.Endlezz_Info, R.id.Endlezz_Info2, R.id.Endlezz_Info1, R.id.Titelbild_1});
 
+                        lv.setAdapter(adapter);
 
-                lv.setAdapter(adapter);
 
-                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                        Button btn = (Button)findViewById(R.id.Endlezz_Lounges);
-                        btn.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Toast.makeText(getApplicationContext(),"Switch wurde betätigt",Toast.LENGTH_LONG).show();
-                            }
-                        });
-                    }
-                });
+
+
+
             }
 
 
         }
 
+    private void getLounges(){
+        Button btn = (Button)findViewById(R.id.Guestlist);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startActivity(new Intent(getApplicationContext(), PopUp.class));
+            }
+        });
+
+
+
+
+
+
+    }
 
     }
 
