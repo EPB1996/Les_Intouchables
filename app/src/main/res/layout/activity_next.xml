@@ -6,34 +6,52 @@
     android:id="@+id/swipeContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Next">
+    tools:context=".Next"
+    android:background="@android:color/background_dark">
 
+
+    <ImageView
+        android:layout_marginTop="3dp"
+        android:id="@+id/tester"
+        android:layout_width="234dp"
+        android:layout_height="63dp"
+        android:src="@drawable/les_intouchable"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+
+        />
 
     <LinearLayout
+        android:layout_marginTop="2dp"
         android:orientation="horizontal"
         android:id="@+id/linear"
         android:layout_width="fill_parent"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:weightSum="2"
+        android:background="@android:color/background_light"
        >
         <Button
+            android:textColor="@android:color/holo_orange_light"
             android:layout_width="130dp"
-            android:layout_height="35dp"
-            android:text="GUESTLIST"
+            android:layout_height="wrap_content"
+            android:text="FRIENDLIST"
             android:layout_weight="1"
             android:id="@+id/Guestlist"
+            android:gravity="center"
             />
 
         <Button
-            style="@android:style/Widget.Holo.Button.Borderless"
+            android:layout_gravity="center"
+            android:textColor="@android:color/holo_orange_light"
             android:id="@+id/Lounges"
             android:layout_width="130dp"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:text="LOUNGES"
             android:layout_weight="1"
             />
 
     </LinearLayout>
+
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"

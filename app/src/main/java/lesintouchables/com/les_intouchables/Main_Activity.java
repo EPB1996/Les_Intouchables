@@ -54,6 +54,11 @@ public class Main_Activity extends ActivityGroup {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), Main_Activity.class));
+
+    }
 
 }
 

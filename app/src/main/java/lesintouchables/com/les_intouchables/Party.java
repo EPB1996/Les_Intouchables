@@ -69,6 +69,8 @@ public class Party extends AppCompatActivity {
     // to keep current Index of text
     int currentIndex = 0;
 
+    Set<String> images;
+
 
 
 
@@ -83,6 +85,8 @@ public class Party extends AppCompatActivity {
         wann = getIntent().getExtras().getString("Wann");
         specials = getIntent().getExtras().getString("Specials");
 
+       images = new HashSet<String>();
+      
 
         String[] test = {wo, was, wann, specials};
 
@@ -181,13 +185,12 @@ public class Party extends AppCompatActivity {
 
         //Imageswitcher
 
-        SharedPreferences settings = getSharedPreferences("CoolPreferences", 0);
-        Set<String> set = settings.getStringSet("key", null);
-
-        System.out.println(set);
 
 
-        final String[] array = set.toArray(new String[0]);
+        System.out.println(Events_Fragment.set);
+
+
+        final String[] array = Events_Fragment.set.toArray(new String[0]);
 
 
 
@@ -211,6 +214,7 @@ public class Party extends AppCompatActivity {
 
         private ProgressDialog pDialog;
         private String url = getIntent().getExtras().getString("url");
+
 
 
 
@@ -247,50 +251,15 @@ public class Party extends AppCompatActivity {
 
                     // looping durch ganze Tabelleneinträge
                     for (int i = 0; i < goodlife_bilder.length(); i++) {
-                        JSONObject c = goodlife_bilder.getJSONObject(0);
-                        JSONObject c1 = goodlife_bilder.getJSONObject(1);
-
-                        //TODO: je nach bildanzahl ändern! Party_fix
-
-                        JSONObject c2 = goodlife_bilder.getJSONObject(2);
-                        JSONObject c3 = goodlife_bilder.getJSONObject(3);
-                        //JSONObject c4 = goodlife_bilder.getJSONObject(4);
-
-
+                        JSONObject c = goodlife_bilder.getJSONObject(i);
 
                         String image = c.getString("Image");
-                        String image1 = c1.getString("Image");
-
-                        //TODO: je nach bildanzahl ändern! Party_fix
-                        String image2 = c2.getString("Image");
-                        String image3 = c3.getString("Image");
-                        //String image4 = c4.getString("Image");
 
 
-
-                        // decode imagestring
-
-                        Set<String> set = new HashSet<String>();
-                        set.add(image);
-                        set.add(image1);
-
-                        //TODO: je nach bildanzahl ändern! Party_fix
-
-                        set.add(image2);
-                        set.add(image3);
-                        //set.add(image4);
-
-
-
-                        SharedPreferences bilder = getSharedPreferences("bilder", 0);
-                        SharedPreferences.Editor editor = bilder.edit();
-                        editor.putStringSet("key", set);
-
-                        editor.apply();
+                        images.add(image);
 
 
                     }
-
 
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -303,9 +272,6 @@ public class Party extends AppCompatActivity {
 
             }
 
-            //image fetch
-
-
             return null;
         }
 
@@ -313,13 +279,12 @@ public class Party extends AppCompatActivity {
         public void onPostExecute(Void a) {
             super.onPostExecute(a);
 
-            SharedPreferences bilder = getSharedPreferences("bilder", 0);
-            Set<String> set = bilder.getStringSet("key", null);
+           
 
-            System.out.println(set);
+            System.out.println(images);
 
 
-            final String[] array = set.toArray(new String[0]);
+            final String[] array = images.toArray(new String[0]);
 
 
             viewButtonNext = (Button) findViewById(R.id.viewbtnnext);

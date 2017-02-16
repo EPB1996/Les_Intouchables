@@ -40,7 +40,8 @@ public class Team extends Fragment {
 
 
 
-        int[] idtext2 = {R.id.Team,R.id.Text1_1,R.id.Text1_2,R.id.Text1_3,R.id.Text2_1,R.id.Text2_2,R.id.Text2_3,R.id.Text3_1,R.id.Text3_2,R.id.Text3_3,R.id.allgemein_1_1,R.id.allgemein_1_2,R.id.allgemein_1_3};
+        int[] idtext2 = {R.id.Team,R.id.Text1_1,R.id.Text1_2,R.id.Text1_3,R.id.Text2_1,R.id.Text2_2,R.id.Text2_3,R.id.Text3_1,R.id.Text3_2,R.id.Text3_3,R.id.allgemein_1_1,R.id.allgemein_1_2,R.id.allgemein_1_3,
+                            R.id.Text4_1,R.id.Text4_2,R.id.Text4_3};
 
         for (int i = 0; i < idtext2.length; i++) {
             TextView text2 = (TextView) v.findViewById(idtext2[i]);
@@ -92,7 +93,15 @@ public class Team extends Fragment {
                 case R.id.Text3_3:
                     text2.setText(R.string.Serhat_Text);
                     break;
-
+                case R.id.Text4_1:
+                    text2.setText(R.string.Etienne_Name);
+                    break;
+                case R.id.Text4_2:
+                    text2.setText(R.string.Etinne_Enterprise);
+                    break;
+                case R.id.Text4_3:
+                    text2.setText(R.string.Etienne_Text);
+                    break;
             }
 
         }

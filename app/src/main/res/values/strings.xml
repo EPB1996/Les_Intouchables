@@ -8,11 +8,14 @@
 
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
-    <string name="Enterprise">  Enterprise: Les Intouchables, Good Life Crew, usw</string>
-    <string name="Serhat_Text">  Blaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaa bitch</string>
+    <string name="Enterprise">  Enterprise: Les Intouchables </string>
+    <string name="Serhat_Text">  Hier kommt dein personalisierter Text hin, mit den du allen auf die Eier gehen kannst.  Bitch</string>
     <string name="Umit_Text">  Blaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaa bitch</string>
     <string name="Sahin_Text">  Blaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaablaa bitch</string>
     <string name="Sahin_Name">  Sahin Oyman</string>
+    <string name="Etienne_Name"> Etienne Baumgartner</string>
+    <string name="Etienne_Text">App Developer und spontaner Partybesucher:)</string>
+    <string name="Etinne_Enterprise"> Freelancer, Les Intouchables IT</string>
     <string name="Umit_Name">  Umit Oyman</string>
     <string name="Serhat_Name">  Serhat Oyman</string>
     <string name="Telefon">0041765822410, baume@hispeed.ch</string>

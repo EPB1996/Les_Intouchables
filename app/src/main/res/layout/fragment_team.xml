@@ -219,18 +219,24 @@
 
 
         <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/Text4.1"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
 
         <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/Text4.2"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
 
         <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/Text4.3"
             android:layout_weight="3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -239,47 +245,58 @@
     </LinearLayout>
 
         <ImageView
-            android:background="@android:color/darker_gray"
+            android:layout_marginStart="2dp"
+            android:background="@android:color/background_dark"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/cast_album_art_placeholder"
+            app:srcCompat="@drawable/umit_profil"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/Profil2"/>
+            android:layout_alignTop="@+id/Profil2"
+            android:scaleType="fitXY"/>
 
         <ImageView
-            android:background="@android:color/darker_gray"
+            android:layout_marginStart="2dp"
+            android:background="@android:color/background_dark"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/cast_album_art_placeholder"
+            app:srcCompat="@drawable/sahin_profil"
             android:layout_alignTop="@+id/Profil1"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:scaleType="fitXY"/>
 
         <ImageView
-            android:background="@android:color/darker_gray"
+            android:layout_marginStart="2dp"
+            android:background="@android:color/background_dark"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/cast_album_art_placeholder"
+            app:srcCompat="@drawable/serhatbild"
             android:layout_alignTop="@+id/Profil3"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:scaleType="fitXY"/>
 
         <ImageView
-            android:background="@android:color/darker_gray"
+            android:layout_marginStart="2dp"
+            android:background="@android:color/background_dark"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/cast_album_art_placeholder"
+            app:srcCompat="@drawable/etienne_profil"
             android:layout_alignTop="@+id/Profil4"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:scaleType="fitXY"/>
+
 
        <ImageView
-           android:background="@android:color/darker_gray"
+           android:background="@android:color/background_dark"
            android:layout_width="match_parent"
            android:layout_height="100dp"
            android:layout_marginTop="5dp"
-           android:layout_below="@+id/Profil4"/>
+           android:layout_below="@+id/Profil4"
+           android:src="@drawable/les_intouchable"
+            />
 
         <ImageView
             android:id="@+id/allgemein_foto"
@@ -288,7 +305,8 @@
             android:layout_height="100dp"
             android:layout_alignTop="@+id/Allgemein_Kontakt"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:scaleType="fitXY" />
 
     </RelativeLayout>
 

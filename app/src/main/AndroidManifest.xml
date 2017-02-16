@@ -3,7 +3,8 @@
     package="lesintouchables.com.les_intouchables">
 
     <!-- To access Google+ APIs: -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -20,20 +21,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Startseit_Swipe"
             android:label="@string/title_activity_startseit__swipe" />
+        <activity android:name=".Party" />
+        <activity android:name=".Next" />
         <activity
-            android:name=".Party" />
-        <activity
-            android:name=".Next" />
-        <activity
-            android:name=".PopUp"
-            android:theme="@style/Theme.AppCompat.Dialog.Alert">
-
-        </activity>
+            android:name=".PopUp_Guestlist"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"/>
+        <activity android:name=".pop_up_lounges"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"
+            />
     </application>
 
 </manifest>

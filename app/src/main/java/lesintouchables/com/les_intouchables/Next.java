@@ -1,67 +1,53 @@
 package lesintouchables.com.les_intouchables;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Base64;
+
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
+
+
+import com.squareup.picasso.Target;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Handler;
 
 
-import static android.os.Build.ID;
 
-
-public class Next extends AppCompatActivity {
+public class Next extends AppCompatActivity  {
 
     private String TAG = Next.class.getSimpleName();
+    Bitmap bm;
+    Target target;
 
     private ProgressDialog pDialog;
     ListView lv;
 
 
     // URL to get contacts JSON
-    private String url = "http://10.0.2.2/webservice/test.php";
+    private String url = "https://edev.york.im/test.php";
     ArrayList<HashMap<String, ?>> contactList;
 
 
@@ -75,6 +61,10 @@ public class Next extends AppCompatActivity {
 
 
 
+
+
+
+
         contactList = new ArrayList<>();
 
         lv = (ListView) findViewById(R.id.list);
@@ -82,7 +72,7 @@ public class Next extends AppCompatActivity {
 
         new GetContacts().execute();
 
-        getLounges();
+        getButtons();
 
 
 
@@ -91,16 +81,19 @@ public class Next extends AppCompatActivity {
     }
 
 
+
     public class GetContacts extends AsyncTask<Void, Void, Void> {
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
                 // Showing progress dialog
+
                 pDialog = new ProgressDialog(Next.this);
                 pDialog.setMessage("Please wait...");
                 pDialog.setCancelable(true);
                 pDialog.show();
+
 
             }
 
@@ -135,22 +128,37 @@ public class Next extends AppCompatActivity {
                             // decode imagestring
 
 
-                            byte[] decodeString = Base64.decode(image, Base64.DEFAULT);
-                            Bitmap bm = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
+
+
+
+
+
+
+
+
+
+
+
+
+                                HashMap<String, Object> result = new HashMap<>();
+
+                                // adding each child node to HashMap key => value
+                                result.put("Name", name);
+                                result.put("Date", date);
+                                result.put("Beschreibung", beschreibung);
+                                result.put("Image",getBitmapFromURL(image));
+
+                                contactList.add(result);
+
+
+
 
 
                             // tmp hash map for single contact
-                            HashMap<String, Object> result = new HashMap<>();
-
-                            // adding each child node to HashMap key => value
-                            result.put("Name", name);
-                            result.put("Date", date);
-                            result.put("Beschreibung", beschreibung);
-                            result.put("Image", bm);
 
 
                             // adding contact to contact list
-                            contactList.add(result);
+
 
 
 
@@ -215,23 +223,56 @@ public class Next extends AppCompatActivity {
 
         }
 
-    private void getLounges(){
-        Button btn = (Button)findViewById(R.id.Guestlist);
-        btn.setOnClickListener(new View.OnClickListener() {
+    private void getButtons(){
+        Button guestlist = (Button)findViewById(R.id.Guestlist);
+        guestlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               startActivity(new Intent(getApplicationContext(), PopUp.class));
+               startActivity(new Intent(getApplicationContext(), PopUp_Guestlist.class));
+            }
+        });
+
+        Button lounges= (Button)findViewById(R.id.Lounges);
+        lounges.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), pop_up_lounges.class));
+
             }
         });
 
 
 
 
+    }
 
+
+
+    public static Bitmap getBitmapFromURL(String src) {
+        try {
+            URL url = new URL(src);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+
+            return myBitmap;
+        } catch (IOException e) {
+            // Log exception
+            return null;
+        }
 
     }
 
-    }
+
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), Main_Activity.class));
+
+        }
+}
 
 
 
