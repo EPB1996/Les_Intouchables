@@ -3,15 +3,16 @@
     package="lesintouchables.com.les_intouchables">
 
     <!-- To access Google+ APIs: -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
         //set detfault activity!
         <activity
             android:name=".Main_Activity"
@@ -24,15 +25,30 @@
         </activity>
         <activity
             android:name=".Startseit_Swipe"
-            android:label="@string/title_activity_startseit__swipe" />
-        <activity android:name=".Party" />
-        <activity android:name=".Next" />
+            android:label="@string/title_activity_startseit__swipe"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Next"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PopUp_Guestlist"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert" />
+        <activity
+            android:name=".pop_up_lounges"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert" />
+        <activity
+            android:name=".Verlosung"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert" />
+        <activity
+            android:name=".Newsletter"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert" />
+
+        <activity android:name=".Kontakt"
             android:theme="@style/Theme.AppCompat.Dialog.Alert"/>
-        <activity android:name=".pop_up_lounges"
-            android:theme="@style/Theme.AppCompat.Dialog.Alert"
-            />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider645566105620372"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.v13.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,10 +32,11 @@ import java.util.HashMap;
 
 import layout.Empfehlungen;
 import layout.Events_Fragment;
+import layout.Home;
 import layout.Team;
 
 
-public class Startseit_Swipe extends AppCompatActivity{
+public class Startseit_Swipe extends FragmentActivity{
 
 
     /**
@@ -55,6 +57,7 @@ public class Startseit_Swipe extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_startseit__swipe);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -86,16 +89,19 @@ public class Startseit_Swipe extends AppCompatActivity{
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
 
-            //TODO: linke fragments! drittes Fragment erstellen!
             switch (position) {
                 case 0:
-                    return Events_Fragment.newInstance("FirstFragment, Instance 1");
+                    return Home.newInstance("FirstFragment, Instance 1");
 
                 case 1:
-                    return Empfehlungen.newInstance("SecondFragment, Instance 2");
+                    return Events_Fragment.newInstance("SecondFragment, Instance 2");
 
                 case 2:
-                    return Team.newInstance("ThirdFragment,Instance 3");
+                    return Empfehlungen.newInstance("ThirdFragment, Instance 3");
+
+                case 3:
+                    return Team.newInstance("ForthFragment,Instance 4");
+
             }
             return null;
         }
@@ -103,18 +109,21 @@ public class Startseit_Swipe extends AppCompatActivity{
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "EVENTS";
+                    return "HOME";
                 case 1:
-                    return "EMPFEHLUNG DES TEAMS";
+                    return "EVENTS";
                 case 2:
+                    return "EMPFEHLUNG DES TEAMS";
+                case 3:
                     return "TEAM/KONTAKT";
+
             }
             return null;
         }

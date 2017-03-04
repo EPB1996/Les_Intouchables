@@ -1,22 +1,35 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#FFBB33</item>
+        <item name="android:itemBackground">@drawable/border</item>
+        <item name="android:itemTextAppearance">@style/ItemTextAppearance.Theme</item>
+
+
+    </style>
+
+    <style name="ItemTextAppearance.Theme" parent="android:style/TextAppearance">
+        <item name="android:textColor">#FFBB33</item>
+
+
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+    <style name="NoTitleDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
 
 
 

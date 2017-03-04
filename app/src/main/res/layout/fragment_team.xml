@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="layout.Team"
-    android:background="@android:color/background_light">
+    android:background="@android:color/background_dark">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -15,27 +15,31 @@
         android:isScrollContainer="true">
 
     <RelativeLayout
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
 
 
         <LinearLayout
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:id="@+id/Allgemein_Kontakt"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:weightSum="4"
-            android:layout_marginRight="100dp"
+            android:layout_height="120dp"
+            android:weightSum="5"
+
             android:layout_marginEnd="100dp">
+
+
 
             <TextView
                 android:id="@+id/allgemein_1.1"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+
                 android:layout_marginStart="5dp"/>
 
             <TextView
@@ -43,47 +47,55 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+
                 android:layout_marginStart="5dp"/>
 
 
             <TextView
                 android:id="@+id/allgemein_1.3"
-                android:layout_weight="2"
+                android:layout_weight="2.05"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"/>
 
 
+            <com.facebook.share.widget.LikeView
+                android:id="@+id/like_view"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_orange_light"
+
+                />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/Team"
+        <View
+            android:layout_below="@+id/Allgemein_Kontakt"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_below="@id/Allgemein_Kontakt"
-            android:gravity="center"
-            android:background="@android:color/darker_gray"
+            android:layout_height="2dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="125dp"
-            android:layout_marginRight="125dp"/>
+            android:background="@android:color/darker_gray"/>
+
+
 
     <LinearLayout
         android:id="@+id/Profil1"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:weightSum="5"
         android:orientation="vertical"
-        android:layout_marginLeft="100dp"
-        android:layout_marginStart="100dp"
-        android:layout_below="@+id/Team"
+        android:layout_marginStart="110dp"
+        android:layout_below="@+id/Allgemein_Kontakt"
+
         >
 
 
+
         <TextView
-            android:layout_marginLeft="5dp"
+
             android:layout_marginStart="5dp"
             android:id="@+id/Text1.1"
             android:layout_weight="1"
@@ -93,7 +105,7 @@
         />
 
         <TextView
-            android:layout_marginLeft="5dp"
+
             android:layout_marginStart="5dp"
             android:id="@+id/Text1.2"
             android:layout_weight="1"
@@ -102,7 +114,7 @@
             />
 
         <TextView
-            android:layout_marginLeft="5dp"
+
             android:layout_marginStart="5dp"
             android:id="@+id/Text1.3"
             android:layout_weight="3"
@@ -110,10 +122,21 @@
             android:layout_height="wrap_content"
             />
 
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
 
 
     </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="150dp">
+
+        </LinearLayout>
+
 
 
         <LinearLayout
@@ -121,16 +144,16 @@
         android:layout_below="@+id/Profil1"
         android:id="@+id/Profil2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:weightSum="5"
         android:orientation="vertical"
-        android:layout_marginLeft="100dp"
-        android:layout_marginStart="100dp"
+
+        android:layout_marginStart="110dp"
         android:layout_marginTop="5dp">
 
 
         <TextView
-            android:layout_marginLeft="5dp"
+
             android:layout_marginStart="5dp"
             android:id="@+id/Text2.1"
             android:layout_weight="1"
@@ -139,7 +162,7 @@
             />
 
         <TextView
-            android:layout_marginLeft="5dp"
+
             android:layout_marginStart="5dp"
             android:id="@+id/Text2.2"
             android:layout_weight="1"
@@ -148,7 +171,7 @@
             />
 
         <TextView
-            android:layout_marginLeft="5dp"
+
             android:layout_marginStart="5dp"
             android:id="@+id/Text2.3"
             android:layout_weight="3"
@@ -157,20 +180,25 @@
             />
 
 
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray"/>
 
     </LinearLayout>
+
+
+
 
 
         <LinearLayout
             android:layout_below="@+id/Profil2"
             android:id="@+id/Profil3"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="150dp"
             android:weightSum="5"
             android:orientation="vertical"
-            android:layout_marginLeft="100dp"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="110dp"
             android:layout_marginTop="5dp">
 
 
@@ -200,6 +228,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray"/>
+
 
         </LinearLayout>
 
@@ -210,12 +243,12 @@
         android:layout_below="@+id/Profil3"
         android:id="@+id/Profil4"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:weightSum="5"
         android:orientation="vertical"
-        android:layout_marginLeft="100dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="5dp">
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
 
 
         <TextView
@@ -244,69 +277,54 @@
 
     </LinearLayout>
 
-        <ImageView
-            android:layout_marginStart="2dp"
-            android:background="@android:color/background_dark"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:srcCompat="@drawable/umit_profil"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/Profil2"
-            android:scaleType="fitXY"/>
 
         <ImageView
+            android:id="@+id/SahinImage"
             android:layout_marginStart="2dp"
-            android:background="@android:color/background_dark"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/sahin_profil"
             android:layout_alignTop="@+id/Profil1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_marginTop="25dp"/>
 
-        <ImageView
-            android:layout_marginStart="2dp"
-            android:background="@android:color/background_dark"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:srcCompat="@drawable/serhatbild"
-            android:layout_alignTop="@+id/Profil3"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:scaleType="fitXY"/>
-
-        <ImageView
-            android:layout_marginStart="2dp"
-            android:background="@android:color/background_dark"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:srcCompat="@drawable/etienne_profil"
-            android:layout_alignTop="@+id/Profil4"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:scaleType="fitXY"/>
-
-
-       <ImageView
-           android:background="@android:color/background_dark"
-           android:layout_width="match_parent"
-           android:layout_height="100dp"
-           android:layout_marginTop="5dp"
-           android:layout_below="@+id/Profil4"
-           android:src="@drawable/les_intouchable"
-            />
 
         <ImageView
             android:id="@+id/allgemein_foto"
-            android:background="@android:color/darker_gray"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignTop="@+id/Allgemein_Kontakt"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/Umitimage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:layout_alignTop="@+id/Profil2"
+            android:layout_alignStart="@+id/SerhatImage"
+            android:layout_marginTop="25dp" />
+
+        <ImageView
+            android:layout_marginTop="21dp"
+            android:id="@+id/SerhatImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:layout_alignTop="@+id/Profil3"
+            android:layout_alignStart="@+id/EtienneImage" />
+
+        <ImageView
+            android:layout_marginTop="25dp"
+            android:id="@+id/EtienneImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:layout_alignTop="@+id/Profil4"
+            android:layout_alignStart="@+id/SahinImage" />
 
     </RelativeLayout>
 

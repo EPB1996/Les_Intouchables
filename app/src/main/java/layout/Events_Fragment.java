@@ -10,16 +10,22 @@ import android.graphics.BitmapRegionDecoder;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Handler;
+import android.support.v7.widget.ButtonBarLayout;
+import android.text.Layout;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -39,22 +45,31 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InterruptedIOException;
+import java.io.LineNumberReader;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import lesintouchables.com.les_intouchables.HttpHandler;
 import lesintouchables.com.les_intouchables.Next;
-import lesintouchables.com.les_intouchables.Party;
+
 import lesintouchables.com.les_intouchables.R;
 import lesintouchables.com.les_intouchables.Startseit_Swipe;
+import lesintouchables.com.les_intouchables.Verlosung;
 
+import static android.R.attr.defaultHeight;
 import static android.R.attr.layout_centerHorizontal;
 import static android.R.attr.layout_centerVertical;
+import static android.R.attr.layout_marginStart;
 import static android.R.attr.width;
+import static android.R.color.holo_orange_dark;
+import static android.R.color.holo_orange_light;
 import static android.support.v7.mediarouter.R.attr.height;
 
 /**
@@ -272,100 +287,136 @@ public class Events_Fragment extends Fragment {
 
 
 
-            //dynamisches erstellen der buttons
-            //RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500);
-            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(1250,750);
-            params.setLayoutDirection(layout_centerVertical);
-            params.setMargins(10, 5, 10, 0);
+            //buttonparams
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,800);
+
+
+
+
+
+            //Strichparams
+            RelativeLayout.LayoutParams paramsStrich = new RelativeLayout.LayoutParams(1000,3);
+            paramsStrich.setMargins(0,5,0,0);
+
+            //btnverlosungsparams
+            RelativeLayout.LayoutParams btnVerlosungparams = new RelativeLayout.LayoutParams(Home.newsletter.getWidth(),Home.newsletter.getHeight());
+            btnVerlosungparams.setMargins(0,0,0,25);
+
+            //Textviewparams
+            LinearLayout.LayoutParams paramsText = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
 
 
             LinearLayout lineartest = (LinearLayout) getView().findViewById(R.id.lineartest);
             lineartest.setGravity(Gravity.CENTER);
+
+
+
             //TODO: je nach bildanzahl ändern! Party_fix
 
-            ImageButton[] btn = new ImageButton[array.length];
 
             for (int i = 0; i < array.length; i++) {
 
 
+                ImageButton btn = new ImageButton(getActivity());
 
-                btn[i] = new ImageButton(getActivity());
-
-                btn[i].setLayoutParams(params);
-                btn[i].setBackgroundColor(Color.WHITE);
-                btn[i].setId(i);
-                btn[i].setScaleType(ImageView.ScaleType.FIT_XY);
+                btn.setLayoutParams(params);
+                btn.setBackgroundColor(Color.BLACK);
+                btn.setBackground(getResources().getDrawable(R.drawable.image_border));
+                btn.setId(i);
+                btn.setScaleType(ImageView.ScaleType.FIT_XY);
 
 
                 byte[] decodeString = Base64.decode(array[i].toString(), Base64.DEFAULT);
                 Bitmap bm = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
 
 
-                btn[i].setImageBitmap(bm);
+                btn.setImageBitmap(bm);
+
+                //add Verlosungsbutton
 
 
-                lineartest.addView(btn[i]);
+                final Button btnVerlosung = new Button(getActivity());
+                btnVerlosung.setText("AN VERLOSUNG TEILNEHMEN");
+                btnVerlosung.setBackground(getResources().getDrawable(R.drawable.border));
+                btnVerlosung.setLayoutParams(btnVerlosungparams);
+                btnVerlosung.setTextSize(13);
+                btnVerlosung.setGravity(Gravity.CENTER);
+                btnVerlosung.setTextColor(getResources().getColor(holo_orange_light));
+                final Animation shake = AnimationUtils.loadAnimation(getView().getContext(), R.anim.shake_1);
+                shake.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        new Handler().postDelayed(new Runnable()
+                        {
+                            @Override
+                            public void run()
+                            {
+                                btnVerlosung.startAnimation(shake);
+                            }
+                        }, 4000);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+                btnVerlosung.startAnimation(shake);
+                btnVerlosung.setId(i);
 
 
+                //add text
+                TextView partyText = new TextView(getActivity());
+                paramsText.setMargins(0,25,5,5);
+                partyText.setLayoutParams(paramsText);
+                partyText.setGravity(Gravity.CENTER);
+                partyText.setId(i);
+                partyText.setTextColor(Color.WHITE);
+                switch (partyText.getId()) {
+                    case 0:
+                        partyText.setText(R.string.GoodLifeCrewText);
+                        break;
+                    default:
+                        partyText.setText("Tester");
+                }
+
+
+                //add strichview
+                View Strich = new View(getView().getContext());
+                Strich.setLayoutParams(paramsStrich);
+                Strich.setBackgroundColor(Color.GRAY);
+
+
+                lineartest.addView(btn);
+                lineartest.addView(new LinearLayout(getActivity()),500,50);
+                lineartest.addView(btnVerlosung);
+                lineartest.addView(new LinearLayout(getActivity()),500,100);
+                lineartest.addView(partyText);
+                lineartest.addView(Strich);
 
 
                 //TODO:link buttons mit der neuen Activity(manuell)!!
-                btn[i].setOnClickListener(new View.OnClickListener() {
+
+
+                btnVerlosung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-
-
-                        switch (v.getId()){
-                            case 0:
-                                String was = Was[0];
-                                Intent intent = new Intent(getActivity(), Party.class);
-                                intent.putExtra("Wo", Wo[0]);
-                                intent.putExtra("Was", Was[0]);
-                                intent.putExtra("Wann", Wann[0]);
-                                intent.putExtra("Specials", Specials[0]);
-                                intent.putExtra("int", 0);
-                                intent.putExtra("url", "https://edev.york.im/goodlife_bilder.php");
-                                startActivity(intent);
-
-
-                                break;
-                            case 1:
-                                String was1 = Was[1];
-                                Intent intent1 = new Intent(getActivity(), Party.class);
-                                intent1.putExtra("Wo", Wo[1]);
-                                intent1.putExtra("Was", Was[1]);
-                                intent1.putExtra("Wann", Wann[1]);
-                                intent1.putExtra("Specials", Specials[1]);
-                                intent1.putExtra("int", 1);
-                                intent1.putExtra("url", "https://edev.york.im/paradise_bilder.php");
-                                startActivity(intent1);
-
-
-                                break;
-                            case 2:
-                                String was2 = Was[2];
-                                Intent intent2 = new Intent(getActivity(), Party.class);
-                                intent2.putExtra("Wo", Wo[2]);
-                                intent2.putExtra("Was", Was[2]);
-                                intent2.putExtra("Wann", Wann[2]);
-                                intent2.putExtra("Specials", Specials[2]);
-                                intent2.putExtra("int", 2);
-                                intent2.putExtra("url", "https://edev.york.im/goodlife_bilder.php");
-                                startActivity(intent2);
-                                break;
-
-
-
-                       }
+                        startActivity(new Intent(getActivity(), Verlosung.class));
                     }
-
                 });
+
             }
         }
     }
 
+ 
 
 
         public static Events_Fragment newInstance(String text) {
