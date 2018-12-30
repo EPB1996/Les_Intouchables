@@ -2,7 +2,7 @@
 
 First experience with Android development.
 
-App to learn about the Android Studio environement and to use as promotion tool for nightlife in zurich. 
+App to learn about the Android Studio environement and to use as promotion tool for the nightlife in zurich. 
 
 Remark:
-Only Prototype not deployed. 
+Only Prototype. Never deployed. 
